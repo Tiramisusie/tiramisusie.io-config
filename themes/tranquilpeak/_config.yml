@@ -54,10 +54,10 @@ sidebar:
             url: /#about
             icon: question
     author_links:
-        # github:
-        #     title: global.github
-        #     url: https://github.com/
-        #     icon: github
+        github:
+           	title: global.github
+           	url: https://github.com/tiramisusie
+            icon: github
         # stack_overflow:
         #     title: global.stack_overflow
         #     url: http://stackoverflow.com/users
@@ -78,15 +78,15 @@ sidebar:
         #     title: global.linked_in
         #     url: https://www.linkedin.com/profile/
         #     icon: linkedin
-        # mail:
-        #     title: global.mail
-        #     url: mailto:
-        #     icon: envelope-o
-    rss:
-        rss:
-            title: global.rss
-            url: /atom.xml
-            icon: rss
+        mail:
+             title: global.mail
+             url: mailto: congsusie@gmail.com
+             icon: envelope-o
+    	#rss:
+        	#rss:
+            #title: global.rss
+            #url: /atom.xml
+            #icon: rss
 
 
 # Header configuration
