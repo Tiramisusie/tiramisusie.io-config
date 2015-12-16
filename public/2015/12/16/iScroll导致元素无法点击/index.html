@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Tiramisusie&#39;s Blog">
+    <title>iScroll导致元素无法点击 - Tiramisusie&#39;s Blog</title>
+    <meta name="author" content="Tiramisusie">
+    
+    
+    <meta name="description" content="最近接手了一个游戏，在接入某一个渠道的时候，需要加一个分享的功能。
+这个需求很简单，一个&amp;lt;textarea&amp;gt;，一个确定按钮，一个取消按钮，加一点点逻辑，理论上就可以了。
+但是却遇到了一个问题：点击&amp;lt;textarea&amp;gt;的时候无法聚焦到它上面，就是说无法在&amp;lt;textarea&amp;gt;里面输入内容，百思不解。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="iScroll导致元素无法点击">
+<meta property="og:url" content="http://tiramisusie.github.io/2015/12/16/iScroll导致元素无法点击/index.html">
+<meta property="og:site_name" content="Tiramisusie's Blog">
+<meta property="og:description" content="最近接手了一个游戏，在接入某一个渠道的时候，需要加一个分享的功能。
+这个需求很简单，一个&amp;lt;textarea&amp;gt;，一个确定按钮，一个取消按钮，加一点点逻辑，理论上就可以了。
+但是却遇到了一个问题：点击&amp;lt;textarea&amp;gt;的时候无法聚焦到它上面，就是说无法在&amp;lt;textarea&amp;gt;里面输入内容，百思不解。">
+<meta property="og:updated_time" content="2015-12-16T11:16:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iScroll导致元素无法点击">
+<meta name="twitter:description" content="最近接手了一个游戏，在接入某一个渠道的时候，需要加一个分享的功能。
+这个需求很简单，一个&amp;lt;textarea&amp;gt;，一个确定按钮，一个取消按钮，加一点点逻辑，理论上就可以了。
+但是却遇到了一个问题：点击&amp;lt;textarea&amp;gt;的时候无法聚焦到它上面，就是说无法在&amp;lt;textarea&amp;gt;里面输入内容，百思不解。">
+    
+    
+    
+        <meta property="og:image" content="/assets/images/rainbowCat.jpeg"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Tiramisusie&#39;s Blog</a>
+    </h1>
+    
+        <a class="header-right-picture" href="/#about">
+            <img class="header-picture" src="/assets/images/rainbowCat.jpeg"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                
+                    <img class="sidebar-profile-picture" src="/assets/images/rainbowCat.jpeg"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Tiramisusie</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/tiramisusie" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            iScroll导致元素无法点击
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Wed Dec 16 2015 19:15:03 GMT+0800">
+	
+		    Dec 16, 2015
+    	
+    </time>
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>最近接手了一个游戏，在接入某一个渠道的时候，需要加一个分享的功能。</p>
+<p>这个需求很简单，一个<code>&lt;textarea&gt;</code>，一个确定按钮，一个取消按钮，加一点点逻辑，理论上就可以了。</p>
+<p>但是却遇到了一个问题：点击<code>&lt;textarea&gt;</code>的时候无法聚焦到它上面，就是说无法在<code>&lt;textarea&gt;</code>里面输入内容，百思不解。</p>
+<a id="more"></a>
+<p>于是Google了一下，在其他人的一些文章中发现了问题的所在。</p>
+<p>我的游戏中为了在移动端获得比较好的滚动体验，使用了一个工具：<a href="http://iscrolljs.com/" target="_blank" rel="external">iScroll</a>。这个工具为了要达到模拟滚动的最佳效果，默认禁用了所有元素（除了<code>&lt;a&gt;</code>）的默认事件，所以造成了<code>&lt;textarea&gt;</code>等的一些元素无法点击，也就无法聚焦。</p>
+<p>解决办法也有一些，有的是直接修改源码。但为了防止其他bug的出现，我选择了用js来对特定元素进行聚焦，代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">_getFocus()&#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementsByClassName(<span class="string">'inputArea'</span>)[<span class="number">0</span>].focus();</span><br><span class="line">&#125;,</span><br><span class="line">render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        ...</span><br><span class="line">        &lt;textarea className=<span class="string">"inputArea"</span> ref=<span class="string">"share"</span> placeholder=&#123;<span class="keyword">this</span>.state.defaultMsg&#125; &gt;</span><br><span class="line">        ...</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里用了jsx的语法，但大意还是很清楚，就是点击了这个<code>&lt;textarea&gt;</code>的时候，就focus到这个元素上，很简单。</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/16/元素居中的实现/" data-tooltip="元素居中方法收集">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2015/12/16/iScroll导致元素无法点击/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2015/12/16/iScroll导致元素无法点击/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2015/12/16/iScroll导致元素无法点击/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Tiramisusie. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/16/元素居中的实现/" data-tooltip="元素居中方法收集">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2015/12/16/iScroll导致元素无法点击/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2015/12/16/iScroll导致元素无法点击/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2015/12/16/iScroll导致元素无法点击/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2015/12/16/iScroll导致元素无法点击/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2015/12/16/iScroll导致元素无法点击/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2015/12/16/iScroll导致元素无法点击/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/rainbowCat.jpeg"/>
+        
+            <h4 id="about-card-name">Tiramisusie</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </h5>
+        
+        
+    </div>
+</div>
+
+        <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>

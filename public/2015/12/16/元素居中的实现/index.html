@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Tiramisusie&#39;s Blog">
+    <title>元素居中方法收集 - Tiramisusie&#39;s Blog</title>
+    <meta name="author" content="Tiramisusie">
+    
+    
+    <meta name="description" content="元素居中不仅是一种技术，更是一种艺术。它主要分成水平方向的居中和垂直方向的居中。由于在开发中经常会遇到，所以从网上收集了一些实现元素居中的方法。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="元素居中方法收集">
+<meta property="og:url" content="http://tiramisusie.github.io/2015/12/16/元素居中的实现/index.html">
+<meta property="og:site_name" content="Tiramisusie's Blog">
+<meta property="og:description" content="元素居中不仅是一种技术，更是一种艺术。它主要分成水平方向的居中和垂直方向的居中。由于在开发中经常会遇到，所以从网上收集了一些实现元素居中的方法。">
+<meta property="og:image" content="http://tiramisusie.github.io/images/middle1.png">
+<meta property="og:image" content="http://tiramisusie.github.io/images/middle2.png">
+<meta property="og:updated_time" content="2015-12-15T11:47:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="元素居中方法收集">
+<meta name="twitter:description" content="元素居中不仅是一种技术，更是一种艺术。它主要分成水平方向的居中和垂直方向的居中。由于在开发中经常会遇到，所以从网上收集了一些实现元素居中的方法。">
+    
+    
+    
+        <meta property="og:image" content="/assets/images/rainbowCat.jpeg"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">Tiramisusie&#39;s Blog</a>
+    </h1>
+    
+        <a class="header-right-picture" href="/#about">
+            <img class="header-picture" src="/assets/images/rainbowCat.jpeg"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                
+                    <img class="sidebar-profile-picture" src="/assets/images/rainbowCat.jpeg"/>
+                
+            </a>
+            <span class="sidebar-profile-name">Tiramisusie</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/tiramisusie" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            元素居中方法收集
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Wed Dec 16 2015 17:58:11 GMT+0800">
+	
+		    Dec 16, 2015
+    	
+    </time>
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>元素居中不仅是一种技术，更是一种艺术。它主要分成水平方向的居中和垂直方向的居中。由于在开发中经常会遇到，所以从网上收集了一些实现元素居中的方法。</p>
+<a id="more"></a>
+<ol>
+<li><p>相对定位元素实现水平居中<br>先上代码：</p>
+<pre><code>.floatMiddle{
+    width: 50px;
+    position: relative;
+    left: 50%;
+    margin-left: -25px;
+}
+</code></pre><p>这种方法关键的地方在于对元素相对定位之后，设置<code>left</code>的值为50%，然后设置<code>margin-left</code>的值为 <code>-（width/2）</code>。<code>left</code>的值为50%的时候，定位元素的左边界就在父元素的中轴上。如图：<br><img src="/images/middle1.png" alt="图1"><br>这个时候设置<code>margin-left</code>值为<code>-（width/2）</code>会使定位元素向左移动，移动的距离刚好使得定位元素的中轴与父元素的中轴重叠，也就是水平居中。效果如图所示：<br><img src="/images/middle2.png" alt="图2"></p>
+<p>另外，我们可以扩展一下，用这种方法实现垂直居中。只需要再添加几行代码：</p>
+<pre><code>.floatMiddle{
+    width: 50px;
+    height: 40px;   //显示地设置高度
+    position: relative;
+    left: 50%;
+    margin-left: -25px;
+    top: 50%;               //设置垂直居中
+    margin-top: -20px;      //
+}
+</code></pre><p>这种方法的好处在于兼容性强，简单，而且不受父元素定位的限制。但一定要知道居中元素的宽度和高度。</p>
+</li>
+</ol>
+<p><a href="#header">返回顶部</a></p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/元素居中/">元素居中</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/16/iScroll导致元素无法点击/"  data-tooltip="iScroll导致元素无法点击">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/24/用browser-sync同时开发多个尺寸的页面/" data-tooltip="browser-sync + gulp + postcss配置文件">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2015/12/16/元素居中的实现/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2015/12/16/元素居中的实现/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2015/12/16/元素居中的实现/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Tiramisusie. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/16/iScroll导致元素无法点击/"  data-tooltip="iScroll导致元素无法点击">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/24/用browser-sync同时开发多个尺寸的页面/" data-tooltip="browser-sync + gulp + postcss配置文件">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2015/12/16/元素居中的实现/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2015/12/16/元素居中的实现/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2015/12/16/元素居中的实现/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2015/12/16/元素居中的实现/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2015/12/16/元素居中的实现/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2015/12/16/元素居中的实现/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/rainbowCat.jpeg"/>
+        
+            <h4 id="about-card-name">Tiramisusie</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </h5>
+        
+        
+    </div>
+</div>
+
+        <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>
