@@ -6,20 +6,26 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Tiramisusie&#39;s Blog">
-    <title>获取滚动条高度 - Tiramisusie&#39;s Blog</title>
+    <title>css实现元素宽高等比 - Tiramisusie&#39;s Blog</title>
     <meta name="author" content="Tiramisusie">
     
     
-    <meta name="description" content="在开发过程中有时候我们需要判断滚动条的位置，来执行某些行为。一个典型的例子：制作‘返回顶部’的控件时，我们想控制这个控件在页面向下滚动一定高度的时候才显示，当页面的顶部出现时这个控件隐藏。下面介绍在不同浏览器中获取滚动条高度的方法。">
+    <meta name="description" content="实现如何用纯 css 实现元素的宽高等比？方法很简单，代码如下：
+html :123&amp;lt;div class=&quot;out&quot;&amp;gt;	&amp;lt;div class=&quot;in&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;
+css :12345678910111213.out&amp;#123; position: relative; width: 50%; padding-bottom: 50%;&amp;#">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="获取滚动条高度">
-<meta property="og:url" content="http://tiramisusie.github.io/2015/03/31/如何判断滚动条的高度/index.html">
+<meta property="og:title" content="css实现元素宽高等比">
+<meta property="og:url" content="http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/index.html">
 <meta property="og:site_name" content="Tiramisusie's Blog">
-<meta property="og:description" content="在开发过程中有时候我们需要判断滚动条的位置，来执行某些行为。一个典型的例子：制作‘返回顶部’的控件时，我们想控制这个控件在页面向下滚动一定高度的时候才显示，当页面的顶部出现时这个控件隐藏。下面介绍在不同浏览器中获取滚动条高度的方法。">
-<meta property="og:updated_time" content="2016-05-03T06:07:27.000Z">
+<meta property="og:description" content="实现如何用纯 css 实现元素的宽高等比？方法很简单，代码如下：
+html :123&amp;lt;div class=&quot;out&quot;&amp;gt;	&amp;lt;div class=&quot;in&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;
+css :12345678910111213.out&amp;#123; position: relative; width: 50%; padding-bottom: 50%;&amp;#">
+<meta property="og:updated_time" content="2016-05-03T06:44:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="获取滚动条高度">
-<meta name="twitter:description" content="在开发过程中有时候我们需要判断滚动条的位置，来执行某些行为。一个典型的例子：制作‘返回顶部’的控件时，我们想控制这个控件在页面向下滚动一定高度的时候才显示，当页面的顶部出现时这个控件隐藏。下面介绍在不同浏览器中获取滚动条高度的方法。">
+<meta name="twitter:title" content="css实现元素宽高等比">
+<meta name="twitter:description" content="实现如何用纯 css 实现元素的宽高等比？方法很简单，代码如下：
+html :123&amp;lt;div class=&quot;out&quot;&amp;gt;	&amp;lt;div class=&quot;in&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;
+css :12345678910111213.out&amp;#123; position: relative; width: 50%; padding-bottom: 50%;&amp;#">
     
     
     
@@ -142,13 +148,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            获取滚动条高度
+            css实现元素宽高等比
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Mar 31 2015 11:51:02 GMT+0800">
+    <time itemprop="datePublished" content="Tue May 03 2016 14:04:44 GMT+0800">
 	
-		    Mar 31, 2015
+		    May 03, 2016
     	
     </time>
     
@@ -157,29 +163,12 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>在开发过程中有时候我们需要判断滚动条的位置，来执行某些行为。一个典型的例子：制作‘返回顶部’的控件时，我们想控制这个控件在页面向下滚动一定高度的时候才显示，当页面的顶部出现时这个控件隐藏。下面介绍在不同浏览器中获取滚动条高度的方法。<br><a id="more"></a></p>
-<ul>
-<li><p>在所有现代浏览器中（除了IE8及更早版本），都支持<code>Window</code>对象的<code>pageYOffset</code>和<code>pageXOffset</code>属性。<br><code>pageYOffset</code>用来获取垂直方向上文档滚动的高度。<br><code>pageXOffset</code>获取水平方法都得滚动距离。</p>
-</li>
-<li><p>在IE全系列中都支持<code>scrollTop</code>和<code>scrollLeft</code>属性。但他们不属于<code>Window</code>对象。这里分两种情况：</p>
-<ol>
-<li>正常情况下，通过查询文档的根节点<code>document.documentElement</code>来获取这些属性。（在chrome中这种方法始终返回 0）</li>
-<li>怪异模式下，通过body元素查询<code>document.body.scrollTop</code>。（chrome用这种方法竟然能正常工作）</li>
-</ol>
-</li>
-</ul>
-<p>于是我们可以用以下的代码来实现‘返回顶部’控件的显示和隐藏：</p>
-<pre><code>window.onscroll = function(){
-    var w = window,
-        d = document,
-        scroll = w.pageYOffset || d.documentElement.scrollTop ||d.body.scrollTop;
-    if(scroll&gt;200){
-        //显示控件
-    }else{
-        //隐藏控件
-    }
-}
-</code></pre><p><a href="#header">返回顶部</a></p>
+            <h3 id="u5B9E_u73B0"><a href="#u5B9E_u73B0" class="headerlink" title="实现"></a>实现</h3><p>如何用纯 css 实现元素的宽高等比？方法很简单，代码如下：</p>
+<p>html :<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"out"</span>&gt;</span><br><span class="line">	&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"in"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>css :<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.out</span><span class="rules">&#123;</span><br><span class="line"> <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">padding-bottom</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.in</span><span class="rules">&#123;</span><br><span class="line"> <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line"> <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#4AE3B5</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="u539F_u7406_u89E3_u6790"><a href="#u539F_u7406_u89E3_u6790" class="headerlink" title="原理解析"></a>原理解析</h3><p>这里的关键点就是 <code>padding-bottom</code> 这个属性。当它的值为百分比的时候，它参照的是这个元素的包含块的宽度。</p>
+<p>在这里，我们把元素的 <code>width</code>，<code>padding-bottom</code> 的值设置成相等的<strong>百分比</strong>，那么最终计算出来的<code>width</code> 和 <code>padding-bottom</code> 的值也是一样的。同时，由于没有显式的设置 <code>height</code>，所以元素的高度就是 <code>padding-bottom</code> 的值。这样就可以在不同宽度下实现元素的宽高等比了。</p>
+<p>把 <code>padding-bottom</code> 换成 <code>padding-top</code> 也有同样的效果。</p>
 
             
                 
@@ -189,19 +178,12 @@
     </div>
     <div class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">TAGGED IN</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/tags/获取滚动条高度/">获取滚动条高度</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/04/11/css动画生成插件/"  data-tooltip="CSS3动画生成插件">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -209,7 +191,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/03/30/picture-size/" data-tooltip="获取图片尺寸">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/19/javascript数组降维/" data-tooltip="javascript数组降维">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -224,17 +206,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2015/03/31/如何判断滚动条的高度/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2015/03/31/如何判断滚动条的高度/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2015/03/31/如何判断滚动条的高度/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -280,7 +262,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/04/11/css动画生成插件/"  data-tooltip="CSS3动画生成插件">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -288,7 +270,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/03/30/picture-size/" data-tooltip="获取图片尺寸">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/19/javascript数组降维/" data-tooltip="javascript数组降维">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -303,17 +285,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2015/03/31/如何判断滚动条的高度/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2015/03/31/如何判断滚动条的高度/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2015/03/31/如何判断滚动条的高度/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -339,17 +321,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2015/03/31/如何判断滚动条的高度/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2015/03/31/如何判断滚动条的高度/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2015/03/31/如何判断滚动条的高度/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
