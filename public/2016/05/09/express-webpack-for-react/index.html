@@ -6,26 +6,26 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Tiramisusie&#39;s Blog">
-    <title>css实现元素宽高等比 - Tiramisusie&#39;s Blog</title>
+    <title>express+webpack for react - Tiramisusie&#39;s Blog</title>
     <meta name="author" content="Tiramisusie">
     
     
-    <meta name="description" content="实现如何用纯 css 实现元素的宽高等比？方法很简单，代码如下：
-html :123&amp;lt;div class=&quot;out&quot;&amp;gt;  &amp;lt;div class=&quot;in&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;
-css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-bottom: 50">
+    <meta name="description" content="最近在做毕业设计，用到了 reactJs， express，mongoDB，然后用 webpack 作为构建工具。每次开始工作的时候都要先开启三个命令行窗口或标签页，分别用来启动 mongoDB，express 和 webpack构建命令。但是觉得每次都要开三个窗口太麻烦了，于是就想着能不能把 express 和 webpack 的启动放在一起。
+Google 了一下之后果然找到了办法。
+webp">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="css实现元素宽高等比">
-<meta property="og:url" content="http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/index.html">
+<meta property="og:title" content="express+webpack for react">
+<meta property="og:url" content="http://tiramisusie.github.io/2016/05/09/express-webpack-for-react/index.html">
 <meta property="og:site_name" content="Tiramisusie's Blog">
-<meta property="og:description" content="实现如何用纯 css 实现元素的宽高等比？方法很简单，代码如下：
-html :123&amp;lt;div class=&quot;out&quot;&amp;gt;  &amp;lt;div class=&quot;in&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;
-css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-bottom: 50">
-<meta property="og:updated_time" content="2016-05-03T06:46:32.000Z">
+<meta property="og:description" content="最近在做毕业设计，用到了 reactJs， express，mongoDB，然后用 webpack 作为构建工具。每次开始工作的时候都要先开启三个命令行窗口或标签页，分别用来启动 mongoDB，express 和 webpack构建命令。但是觉得每次都要开三个窗口太麻烦了，于是就想着能不能把 express 和 webpack 的启动放在一起。
+Google 了一下之后果然找到了办法。
+webp">
+<meta property="og:updated_time" content="2016-05-09T08:30:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css实现元素宽高等比">
-<meta name="twitter:description" content="实现如何用纯 css 实现元素的宽高等比？方法很简单，代码如下：
-html :123&amp;lt;div class=&quot;out&quot;&amp;gt;  &amp;lt;div class=&quot;in&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;
-css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-bottom: 50">
+<meta name="twitter:title" content="express+webpack for react">
+<meta name="twitter:description" content="最近在做毕业设计，用到了 reactJs， express，mongoDB，然后用 webpack 作为构建工具。每次开始工作的时候都要先开启三个命令行窗口或标签页，分别用来启动 mongoDB，express 和 webpack构建命令。但是觉得每次都要开三个窗口太麻烦了，于是就想着能不能把 express 和 webpack 的启动放在一起。
+Google 了一下之后果然找到了办法。
+webp">
     
     
     
@@ -148,13 +148,13 @@ css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            css实现元素宽高等比
+            express+webpack for react
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue May 03 2016 14:04:44 GMT+0800">
+    <time itemprop="datePublished" content="Mon May 09 2016 15:02:19 GMT+0800">
 	
-		    May 03, 2016
+		    May 09, 2016
     	
     </time>
     
@@ -163,12 +163,15 @@ css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="u5B9E_u73B0"><a href="#u5B9E_u73B0" class="headerlink" title="实现"></a>实现</h3><p>如何用纯 css 实现元素的宽高等比？方法很简单，代码如下：</p>
-<p>html :<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"out"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"in"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>css :<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.out</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">padding-bottom</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.in</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#4AE3B5</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="u539F_u7406_u89E3_u6790"><a href="#u539F_u7406_u89E3_u6790" class="headerlink" title="原理解析"></a>原理解析</h3><p>这里的关键点就是 <code>padding-bottom</code> 这个属性。当它的值为百分比的时候，它参照的是这个元素的包含块的宽度。</p>
-<p>在这里，我们把元素的 <code>width</code>，<code>padding-bottom</code> 的值设置成相等的<strong>百分比</strong>，那么最终计算出来的<code>width</code> 和 <code>padding-bottom</code> 的值也是一样的。同时，由于没有显式的设置 <code>height</code>，所以元素的高度就是 <code>padding-bottom</code> 的值。这样就可以在不同宽度下实现元素的宽高等比了。</p>
-<p>把 <code>padding-bottom</code> 换成 <code>padding-top</code> 也有同样的效果。</p>
+            <p>最近在做毕业设计，用到了 reactJs， express，mongoDB，然后用 webpack 作为构建工具。每次开始工作的时候都要先开启三个命令行窗口或标签页，分别用来启动 mongoDB，express 和 webpack构建命令。但是觉得每次都要开三个窗口太麻烦了，于是就想着能不能把 express 和 webpack 的启动放在一起。</p>
+<p>Google 了一下之后果然找到了办法。</p>
+<h2 id="webpack_middleware"><a href="#webpack_middleware" class="headerlink" title="webpack middleware"></a>webpack middleware</h2><p>这里主要用到了 webpack 的一个中间件：<code>webpack-dev-middleware</code>。</p>
+<p><strong>提醒一下</strong>，如果你原来是用 <code>webpack-dev-server</code> 的话，最好先 uninstall 一下，不然可能会出错。其实，<code>webpack-dev-server</code> 在内部也是用到了 <code>webpack-dev-middleware</code> ，我们这里只是把它独立出来使用。</p>
+<p>可能用人会问，<code>webpack-dev-server</code> 不也是内置了 express 的功能吗？为什么不直接用？我开始的时候也是这样想，但后来发现，这个内置的「express」好像只具备「server」的功能，没有处理网络请求的功能，所以当我在前端就不能正确的访问数据库。（当然也有可能是我的配置不对）</p>
+<p>另外，还用到了另一个中间件：<code>webpack-hot-middleware</code>。由于没有<code>webpack-dev-server</code> ，所以用这个中间件来提供「hot reload」的功能。</p>
+<h2 id="webpack__u914D_u7F6E_u6587_u4EF6"><a href="#webpack__u914D_u7F6E_u6587_u4EF6" class="headerlink" title="webpack 配置文件"></a>webpack 配置文件</h2><p>主要是 entry 的配置：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">entry: [</span><br><span class="line">  <span class="string">'webpack-hot-middleware/client'</span>,</span><br><span class="line">  <span class="string">'webpack/hot/dev-server'</span></span><br><span class="line">  <span class="string">'./src/index.js'</span></span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<h2 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"><span class="keyword">var</span> WebpackDevMiddleware = <span class="built_in">require</span>(<span class="string">'webpack-dev-middleware'</span>);</span><br><span class="line"><span class="keyword">var</span> WebpackHotMiddleware = <span class="built_in">require</span>(<span class="string">'webpack-hot-middleware'</span>);</span><br><span class="line"><span class="keyword">var</span> config = <span class="built_in">require</span>(<span class="string">'./webpack.config'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> compiler = webpack(config);</span><br><span class="line"></span><br><span class="line">app.use(WebpackDevMiddleware(compiler, &#123;</span><br><span class="line">  publicPath: config.output.publicPath,</span><br><span class="line">  historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">  stats: &#123;colors: <span class="literal">true</span>&#125;</span><br><span class="line">&#125;));</span><br><span class="line"></span><br><span class="line">app.use(WebpackHotMiddleware(compiler));</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>)；</span><br></pre></td></tr></table></figure>
 
             
                 
@@ -178,12 +181,19 @@ css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-
     </div>
     <div class="post-footer main-content-wrap">
         
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/express-webpack-react/">express webpack react</a>
+
+            </div>
+        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/09/express-webpack-for-react/"  data-tooltip="express+webpack for react">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/08/React开发环境配置/"  data-tooltip="React开发环境配置">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -191,7 +201,7 @@ css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/19/javascript数组降维/" data-tooltip="javascript数组降维">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/03/css实现元素宽高等比/" data-tooltip="css实现元素宽高等比">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -206,17 +216,17 @@ css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2016/05/09/express-webpack-for-react/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2016/05/09/express-webpack-for-react/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2016/05/09/express-webpack-for-react/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -262,7 +272,7 @@ css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/09/express-webpack-for-react/"  data-tooltip="express+webpack for react">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/08/React开发环境配置/"  data-tooltip="React开发环境配置">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -270,7 +280,7 @@ css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/19/javascript数组降维/" data-tooltip="javascript数组降维">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/05/03/css实现元素宽高等比/" data-tooltip="css实现元素宽高等比">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -285,17 +295,17 @@ css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2016/05/09/express-webpack-for-react/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2016/05/09/express-webpack-for-react/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2016/05/09/express-webpack-for-react/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -321,17 +331,17 @@ css :12345678910111213.out&amp;#123;  position: relative;  width: 50%;  padding-
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://tiramisusie.github.io/2016/05/09/express-webpack-for-react/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://tiramisusie.github.io/2016/05/09/express-webpack-for-react/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2016/05/03/css实现元素宽高等比/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://tiramisusie.github.io/2016/05/09/express-webpack-for-react/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
